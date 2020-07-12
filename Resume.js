@@ -1,27 +1,4 @@
-//smooth scroll
-var navAnchorTags = document.querySelectorAll('.nav-menu a');
 
-for( var i = 0; i< navAnchorTags.length; i++){
-    navAnchorTags[i].addEventListener('click', function(event){
-        event.preventDefault();
-        var targetSectionId = this.textContent.trim().toLowerCase();
-        if(targetSectionId == 'home'){
-            var targetSection = "body-header" ;
-        }
-        else{
-        var targetSection = document.getElementById(targetSectionId);
-        }
-
-        var scrollInterval = setInterval(function(){
-            var targetPosition = targetSection.getBoundingClientRect();
-             if(targetPosition.top <= 0){
-                        clearInterval(scrollInterval);
-                        return;
-                    }
-                    window.scrollBy(0,50);
-                }, 50);
-    });
-}
 
 //skills progress
 var progressBars = document.querySelectorAll('.skill-progress > div');
